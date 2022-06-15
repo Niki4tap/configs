@@ -34,7 +34,7 @@ in {
 	};
 	config = with util-lib; mkMerge [
 		{
-			_condition = (cfg.nvidia == "offload");
+			_condition = (cfg.mode == "offload");
 			environment.systemPackages = [
 				nvidia-offload
 			];
@@ -46,7 +46,7 @@ in {
 		}
 
 		{
-			_condition = (cfg.nvidia == "sync");
+			_condition = (cfg.mode == "sync");
 			hardware.nvidia.prime = {
 				sync.enable = true;
 				intelBusId = assertNotEmptyMsg cfg.intelBusId "intelBusId is empty.";

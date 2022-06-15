@@ -33,6 +33,15 @@
 						./systems/main-desktop.nix
 					];
 				};
+				nixos-laptop = nixos {
+					inherit system;
+
+					specialArgs.util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
+					modules = [
+						./common
+						./systems/laptop.nix
+					];
+				};
 			};
 		}
 	);

@@ -13,7 +13,7 @@
 			(i: names:
 				{
 					environment.systemPackages = names;
-					_condition = getAttrByPath (["config"] ++ (splitString "." def_name) ++ [(builtins.getAttr (builtins.elemAt (builtins.attrNames def) i) def)]);
+					_condition = builtins.trace (attrByPath (["config"] ++ (splitString "." def_name) ++ [(builtins.getAttr (builtins.elemAt (builtins.attrNames def) i) def)])) false;
 				}
 			)
 			(map (name: (builtins.elemAt (builtins.getAttr name def) 1)) (builtins.attrNames def)))

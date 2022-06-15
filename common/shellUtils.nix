@@ -3,7 +3,7 @@
 with util-lib; pkgDef {
 	def_name = "main.shellUtils";
 	def = with pkgs; {
-		cool_looking	= [(mkOptOut	"Install cool looking programs.")	[neofetch cpufetch lolcat]];
+		cool_looking	= [(mkOptOut	"Install cool looking programs.")	[neofetch cpufetch lolcat bat]];
 		basics			= [(mkOptOut	"Install basic shell utilities.")	[pciutils file wget]];
 		git				= [(mkOptOut	"Install git.")						[git]];
 		earlyoom		= [(mkOptIn		"Install earlyoom.")				[earlyoom]];

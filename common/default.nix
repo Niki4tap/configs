@@ -1,4 +1,4 @@
-{...}:
+{nixpkgs, ...}:
 
 {
 	imports = [
@@ -18,5 +18,6 @@
 		./editors.nix
 		./fonts.nix
 	];
+	nixpkgs.config.allowUnfree = true;
 	system.stateVersion = "22.11";
 }
