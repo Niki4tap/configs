@@ -1,4 +1,4 @@
-{pkgs, util-lib, ...}:
+{config, pkgs, util-lib, ...}:
 
 with util-lib; pkgDef {
 	def_name = "main.editors";
@@ -8,4 +8,5 @@ with util-lib; pkgDef {
 		vscode		= [(mkOptOut	"Install vscode.")		[vscode-fhs]];
 		kdenlive	= [(mkOptIn		"Install kdenlive.")	[kdenlive]];
 	};
+	cfg = config;
 }

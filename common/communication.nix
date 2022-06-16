@@ -1,4 +1,4 @@
-{pkgs, util-lib, ...}:
+{config, pkgs, util-lib, ...}:
 
 let
 	discord-latest = pkgs.discord.overrideAttrs (old: {
@@ -14,4 +14,5 @@ in with util-lib; pkgDef {
 		discord		=	[(mkOptIn "Install discord.")				[discord-latest]];
 		irc			=	[(mkOptIn "Install weechat irc client.")	[weechat-unwrapped]];
 	};
+	cfg = config;
 }

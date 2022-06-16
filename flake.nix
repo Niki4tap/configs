@@ -28,6 +28,7 @@
 
 					# afaik `specialArgs` is deprecated, but I can't use `_module.args` here for some reason?
 					specialArgs.util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
+					specialArgs.rust-overlay = rust-overlay;
 					modules = [
 						./common
 						./systems/main-desktop.nix
@@ -37,6 +38,7 @@
 					inherit system;
 
 					specialArgs.util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
+					specialArgs.rust-overlay = rust-overlay;
 					modules = [
 						./common
 						./systems/laptop.nix

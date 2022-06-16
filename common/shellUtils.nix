@@ -1,4 +1,4 @@
-{pkgs, util-lib, ...}:
+{config, pkgs, util-lib, ...}:
 
 with util-lib; pkgDef {
 	def_name = "main.shellUtils";
@@ -16,4 +16,5 @@ with util-lib; pkgDef {
 		tmux			= [(mkOptOut	"Install tmux.")					[tmux]];
 		screen			= [(mkOptIn		"Install screen.")					[screen]];
 	};
+	cfg = config;
 }

@@ -1,4 +1,4 @@
-{nixpkgs, ...}:
+{nixpkgs, rust-overlay, ...}:
 
 {
 	imports = [
@@ -18,6 +18,7 @@
 		./editors.nix
 		./fonts.nix
 	];
+	nixpkgs.overlays = [rust-overlay.overlay];
 	nixpkgs.config.allowUnfree = true;
 	system.stateVersion = "22.11";
 }
