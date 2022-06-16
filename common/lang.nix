@@ -13,5 +13,5 @@ in with util-lib; pkgDef {
 		rust		= [(mkOptIn	"Install rust.")			[rust-latest-nightly rustup]];
 		java8		= [(mkOptIn	"Install java v8.")				[jre8]];
 	};
-	cfg = config;
+	inherit config;
 }

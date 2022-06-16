@@ -16,5 +16,5 @@ with util-lib; pkgDef {
 		tmux		= [(mkOptOut	"Install tmux.")			[tmux]];
 		screen		= [(mkOptIn	"Install screen.")			[screen]];
 	};
-	cfg = config;
+	inherit config;
 }

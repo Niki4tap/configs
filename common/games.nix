@@ -5,5 +5,5 @@ with util-lib; pkgDef {
 	def = with pkgs; {
 		minecraft	= [(mkOptIn	"Install minecraft.")	[minecraft]];
 	};
-	cfg = config;
+	inherit config;
 }
