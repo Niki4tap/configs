@@ -13,7 +13,6 @@
 			(i: names:
 				{
 					environment.systemPackages = names;
-#					_condition = builtins.elemAt (builtins.trace (attrByPath ([(builtins.elemAt (builtins.attrNames def) i)]) null def) null) 0;
 					_condition = attrByPath ((splitString "." def_name) ++ [(builtins.elemAt (builtins.attrNames def) i)]) null cfg;
 				}
 			)
