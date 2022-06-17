@@ -1,9 +1,12 @@
-{config, lib, pkgs, util-lib, ...}:
+{config, pkgs, util-lib, ...}:
 
 let
 	cfg = config.main.fish;
 	cnf-fix-sh = pkgs.writeShellScriptBin "cnf-fix" ''
 		sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos && sudo nix-channel --update
+	'';
+	omf-install-sh = pkgs.writeShellScriptBin "omf-install" ''
+		curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/v7/bin/install | fish
 	'';
 in {
 	options.main.fish = with util-lib; {
@@ -20,7 +23,7 @@ in {
 		{
 			_condition = cfg.omf;
 			environment.systemPackages = with pkgs; [
-				oh-my-fish
+				omf-install-sh # Not using oh-my-fish package, it's broken
 			];
 		}
 
