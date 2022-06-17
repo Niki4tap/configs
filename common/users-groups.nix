@@ -1,13 +1,13 @@
-{config, lib, pkgs, ...}:
+{config, pkgs, util-lib, ...}:
 
 {
-	config = with lib; mkMerge [
+	config = with util-lib; mkMerge [
 		{
+			_condition = true;
 			time.timeZone = "Europe/Moscow";
 			users = {
 				defaultUserShell = pkgs.bash;
 				users.niki4tap = {
-					shell = pkgs.fish;
 					extraGroups = ["wheel" "audio" "video"];
 					isNormalUser = true;
 					uid = 1000;
@@ -17,8 +17,15 @@
 				};
 			};
 		}
-		(mkIf (!config.main.hardware.homePartition) {
+
+		{
+			_condition = (!config.main.hardware.homePartition);
 			users.users.niki4tap.createHome = true;
-		})
+		}
+
+		{
+			_condition = (config.main.fish.fish);
+			users.users.niki4tap.shell = pkgs.fish;
+		}
 	];
 }
