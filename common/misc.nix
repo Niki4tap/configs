@@ -1,4 +1,4 @@
-{util-lib, pkgs, ...}:
+{config, util-lib, pkgs, ...}:
 
 with util-lib; pkgDef {
 	def_name = "main.misc";	

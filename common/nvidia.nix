@@ -22,12 +22,12 @@ in {
 			default = false;
 		};
 		nvidiaBusId = mkOption {
-			type = types.string;
+			type = types.str;
 			description = "Nvidia bus id, do `lspci` to figure it out";
 			default = "";
 		};
 		intelBusId = mkOption {
-			type = types.string;
+			type = types.str;
 			description = "Intel bus id, do `lspci` to figure it out";
 			default = "";
 		};

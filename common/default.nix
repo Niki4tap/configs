@@ -17,6 +17,7 @@
 		./xorg.nix
 		./editors.nix
 		./fonts.nix
+		./misc.nix
 	];
 	nixpkgs.overlays = [rust-overlay.overlay];
 	nixpkgs.config.allowUnfree = true;
