@@ -22,14 +22,14 @@ in {
 
 		{
 			_condition = cfg.omf;
-			environment.systemPackages = with pkgs; [
+			environment.systemPackages = [
 				omf-install-sh # Not using oh-my-fish package, it's broken
 			];
 		}
 
 		{
 			_condition = cfg.cnf-fix;
-			environment.systemPackages = with pkgs; [
+			environment.systemPackages = [
 				cnf-fix-sh
 			];
 		}
