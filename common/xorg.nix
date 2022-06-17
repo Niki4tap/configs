@@ -17,6 +17,10 @@ in {
 	};
 	config = util-lib.mkMerge [
 		{
+			_condition = (config.main.nvidia.mode != "none");
+			services.xserver.videoDrivers = ["nvidia"];
+		}
+		{
 			_condition = ((cfg.dm != "none") || (cfg.de != "none"));
 			services.xserver.enable = true;
 		}
