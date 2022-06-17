@@ -1,7 +1,7 @@
 {config, pkgs, util-lib, ...}:
 
 let
-	rust-latest-nightly = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.minimal);
+	rust-latest-nightly = pkgs.rust-bin.selectLatestNightlyWith (toolchain: toolchain.minimal.override {extensions = ["rust-src"];});
 in with util-lib; pkgDef {
 	def_name = "main.lang";
 	def = with pkgs; {
