@@ -3,7 +3,7 @@
 let
 	cfg = config.main.fish;
 	cnf-fix-sh = pkgs.writeShellScriptBin "cnf-fix" ''
-		sudo -s nix-channel --add https://nixos.org/channels/nixos-unstable nixos && nix-channel --update
+		sudo nix-channel --add https://nixos.org/channels/nixos-unstable nixos && sudo nix-channel --update
 	'';
 in {
 	options.main.fish = with util-lib; {
