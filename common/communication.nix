@@ -11,8 +11,8 @@ let
 in with util-lib; pkgDef {
 	def_name = "main.communication";
 	def = with pkgs; {
-		discord	=	[(mkOptIn "Install discord.")			[discord-latest]];
-		irc	=	[(mkOptIn "Install weechat irc client.")	[weechat-unwrapped]];
+		discord	= [(mkOptIn	"Install discord.")		[discord-latest]];
+		irc	= [(mkOptIn	"Install weechat irc client.")	[weechat-unwrapped]];
 	};
 	inherit config;
 }

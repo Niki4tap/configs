@@ -11,7 +11,7 @@ in with util-lib; pkgDef {
 		python		= [(mkOptOut	"Install python v3.10.")		[python310]];
 		python_extra	= [(mkOptOut	"Install extra libs for python.")	[python310Packages.requests python310Packages.pip]];
 		rust		= [(mkOptIn	"Install rust.")			[rust-latest-nightly rustup]];
-		java8		= [(mkOptIn	"Install java v8.")				[jre8]];
+		java8		= [(mkOptIn	"Install java v8.")			[jre8]];
 	};
 	inherit config;
 }
