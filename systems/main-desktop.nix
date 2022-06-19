@@ -28,7 +28,8 @@
 			clang = true;
 			python = true;
 			python_extra = true;
-			rust = true;
+			rust-minimal = false;
+			rust-full = true;
 			java8 = true;
 		};
 		nix.flakes = true;
