@@ -33,6 +33,7 @@
 			java8 = true;
 		};
 		nix.flakes = true;
+		env.direnv = true;
 		nvidia = {
 			mode = "sync";
 			sync-external-display = true;
