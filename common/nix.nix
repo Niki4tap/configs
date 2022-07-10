@@ -5,15 +5,33 @@ let
 in {
 	options.main.nix = with util-lib; {
 		flakes = mkOptOut "Enable experimental flake support.";
-	};
-	config = {
-		nix = let
-			nix = pkgs.nixFlakes;
-		in {
-			package = nix;
-			extraOptions = ''
-				experimental-features = nix-command flakes
-			'';
+		alternative-shell = mkOption {
+			type = types.enum ["none" "zsh" "fish"];
+			description = "Use alternative nix-shell";
+			default = "none";
 		};
 	};
+	config = util-lib.mkMerge [
+		{
+			_condition = cfg.flakes;
+			nix = {
+				package = pkgs.nixFlakes;
+				extraOptions = ''
+					experimental-features = nix-command flakes
+				'';
+			};
+		}
+		{
+			_condition = (cfg.alternative-shell != "none");
+			environment.systemPackages = with pkgs; [
+				any-nix-shell
+			]
+		}
+		{
+			_condition = (cfg.alternative-shell == "fish"); # zsh support is coming when I need it
+			programs.fish.promptInit = ''
+				any-nix-shell fish --info-right | source
+			'';
+		}
+	];
 }

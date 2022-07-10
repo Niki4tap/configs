@@ -29,7 +29,7 @@ in {
 		}
 
 		{
-			_condition = true; # Always included
+			_condition = true;
 			fileSystems = {
 				"/" = {
 					device = "/dev/disk/by-label/nixos_root";
