@@ -19,6 +19,8 @@
 		./fonts.nix
 		./misc.nix
 		./env.nix
+		./python.nix
+		./android.nix
 	];
 	nixpkgs.overlays = [rust-overlay.overlay];
 	nixpkgs.config.allowUnfree = true;

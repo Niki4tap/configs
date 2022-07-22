@@ -17,15 +17,17 @@
 				};
 			};
 		}
-
 		{
 			_condition = (!config.main.hardware.homePartition);
 			users.users.niki4tap.createHome = true;
 		}
-
 		{
 			_condition = (config.main.fish.fish);
 			users.users.niki4tap.shell = pkgs.fish;
+		}
+		{
+			_condition = (config.main.android.adb);
+			users.users.niki4tap.extraGroups = ["adbusers"];
 		}
 	];
 }

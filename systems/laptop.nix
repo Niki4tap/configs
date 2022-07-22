@@ -17,7 +17,7 @@
 			clang = true;
 			python = true;
 			python_extra = true;
-			rust = true;
+			rust-minimal = true;
 			java8 = false;
 		};
 		networking = {

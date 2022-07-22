@@ -3,8 +3,8 @@
 let
 	cfg = config.main.nix;
 in {
-	options.main.nix = with util-lib; {
-		flakes = mkOptOut "Enable experimental flake support.";
+	options.main.nix = with lib; {
+		flakes = util-lib.mkOptOut "Enable experimental flake support.";
 		alternative-shell = mkOption {
 			type = types.enum ["none" "zsh" "fish"];
 			description = "Use alternative nix-shell";
@@ -25,7 +25,7 @@ in {
 			_condition = (cfg.alternative-shell != "none");
 			environment.systemPackages = with pkgs; [
 				any-nix-shell
-			]
+			];
 		}
 		{
 			_condition = (cfg.alternative-shell == "fish"); # zsh support is coming when I need it
