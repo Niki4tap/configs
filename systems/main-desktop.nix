@@ -33,6 +33,7 @@
 			java8 = true;
 		};
 		nix.flakes = true;
+		nix.alternative-shell = "fish";
 		env.direnv = true;
 		nvidia = {
 			mode = "sync";

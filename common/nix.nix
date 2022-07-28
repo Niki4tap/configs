@@ -29,6 +29,9 @@ in {
 		}
 		{
 			_condition = (cfg.alternative-shell == "fish"); # zsh support is coming when I need it
+			environment.systemPackages = with pkgs; [
+				any-nix-shell
+			];
 			programs.fish.promptInit = ''
 				any-nix-shell fish --info-right | source
 			'';
