@@ -32,7 +32,7 @@ in {
 			default = "";
 		};
 	};
-	config = with util-lib; mkMerge [
+	config = util-lib.mkMerge [
 		{
 			_condition = (cfg.mode == "offload");
 			environment.systemPackages = [

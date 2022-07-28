@@ -1,6 +1,6 @@
 {config, util-lib, ...}:
 
-with util-lib; mkMerge [
+util-lib.mkMerge [
 	{
 		_condition = true;
 		boot = {
