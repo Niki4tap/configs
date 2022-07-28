@@ -10,13 +10,15 @@
 		{config =
 		((import ./merge.nix inputs).mkMerge (imap0 
 			(i: part:
-				part //
+				(removeAttrs part ["_extra_conditions" "_condition_override"]) //
 				(
 					let
 						cond = attrByPath ((splitString "." def_name) ++ [(builtins.elemAt (builtins.attrNames def) i)]) null config;
+						override-present = part ? _condition_override;
+						override = part._condition_override;
 						conds = (if part ? _extra_conditions then part._extra_conditions else []);
 					in {
-						_condition = all (val: val) ([cond] ++ conds);
+						_condition = all (val: val) ([(if override-present then (override cond) else cond)] ++ conds);
 					}
 				)
 			)
