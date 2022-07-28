@@ -56,5 +56,6 @@
 		};
 		xorg.dm = "sddm";
 		xorg.de = "gnome";
+		rgb.openrgb = true;
 	};
 }
