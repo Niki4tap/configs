@@ -3,12 +3,13 @@
 let
 	cfg = config.main.rgb;
 	openrgb-rules = builtins.fetchurl {
-		url = "https://gitlab.com/CalcProgrammer1/OpenRGB/-/jobs/artifacts/master/raw/60-openrgb.rules";
-	}
+		url = "https://gitlab.com/CalcProgrammer1/OpenRGB/-/jobs/2762976628/artifacts/raw/60-openrgb.rules?inline=false";
+		sha256 = "1s3dk80yf0j86sl4ijcbsc7pvfsvcsw5d5adhfjaplghn9n5lgi2";
+	};
 in {
 	options.main.rgb = with util-lib; {
 		openrgb = mkOptIn "Install openrgb."; # https://discourse.nixos.org/t/guide-to-setup-openrgb-on-nixos/9093
-	}
+	};
 	config = util-lib.mkMerge [
 		{
 			_condition = cfg.openrgb;
