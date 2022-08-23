@@ -19,8 +19,8 @@ in with util-lib; pkgDef {
 		cling		= [(mkOptIn	"Install cling.")			[cling]];
 		python		= [(mkOptOut	"Install python v3.10.")		[python310]];
 		python_extra	= [(mkOptOut	"Install extra libs for python.")	[python310Packages.requests python310Packages.pip]];
-		rust-minimal	= [(mkOptOut	"Install host rust toolchain.")		[rust-host rustup]];
-		rust-full	= [(mkOptIn	"Install all of the toolchains.")	[rust-full rustup]];
+		rust-minimal	= [(mkOptOut	"Install host rust toolchain.")		[rust-host]];
+		rust-full	= [(mkOptIn	"Install all of the toolchains.")	[rust-full]];
 		java8		= [(mkOptIn	"Install java v8.")			[jre8]];
 	};
 	inherit config;

@@ -23,7 +23,7 @@
 		./android.nix
 		./rgb.nix
 	];
-	nixpkgs.overlays = [rust-overlay.overlay];
+	nixpkgs.overlays = [rust-overlay.overlays.default];
 	nixpkgs.config.allowUnfree = true;
 	system.stateVersion = "22.11";
 }
