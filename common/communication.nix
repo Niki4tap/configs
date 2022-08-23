@@ -2,10 +2,10 @@
 
 let
 	discord-latest = pkgs.discord.overrideAttrs (old: {
-		version = "0.0.18";
+		version = "0.0.19";
 		src = pkgs.fetchurl {
-			url = "https://dl.discordapp.net/apps/linux/0.0.18/discord-0.0.18.tar.gz";
-			sha256 = "sha256-BBc4n6Q3xuBE13JS3gz/6EcwdOWW57NLp2saOlwOgMI=";
+			url = "https://dl.discordapp.net/apps/linux/0.0.19/discord-0.0.19.tar.gz";
+			sha256 = "1403vdc7p6a8mhr114brfp4dqvikaj5s71wrx20ca5y6srsv5x0r";
 		};
 	});
 in with util-lib; pkgDef {
