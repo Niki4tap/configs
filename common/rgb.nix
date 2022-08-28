@@ -2,7 +2,7 @@
 
 let
 	cfg = config.main.rgb;
-	openrgb-rules = builtins.readFile ../misc/60-openrgb.rules;
+	openrgb-rules = ../misc/60-openrgb.rules;
 in {
 	options.main.rgb = with util-lib; {
 		openrgb = mkOptIn "Install openrgb."; # https://discourse.nixos.org/t/guide-to-setup-openrgb-on-nixos/9093
