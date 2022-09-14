@@ -19,6 +19,7 @@ in with util-lib; pkgDef {
 		cling		= [(mkOptIn	"Install cling.")			[cling]];
 		python		= [(mkOptOut	"Install python v3.10.")		[python310]];
 		python_extra	= [(mkOptOut	"Install extra libs for python.")	[python310Packages.requests python310Packages.pip]];
+		evcxr		= [(mkOptOut	"Install evcxr, rust repl")		[evcxr]];
 		rust-minimal	= [(mkOptOut	"Install host rust toolchain.")		[rust-host]];
 		rust-full	= [(mkOptIn	"Install all of the toolchains.")	[rust-full]];
 		java8		= [(mkOptIn	"Install java v8.")			[jre8]];
