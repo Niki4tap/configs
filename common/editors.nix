@@ -7,6 +7,7 @@ with util-lib; pkgDef {
 		pycharm		= [(mkOptIn	"Install pycharm.")	[jetbrains.pycharm-community]];
 		vscode		= [(mkOptOut	"Install vscode.")	[vscode-fhs]];
 		kdenlive	= [(mkOptIn	"Install kdenlive.")	[kdenlive]];
+		krita		= [(mkOptOut	"Install krita.")	[krita]];
 	};
 	inherit config;
 }
