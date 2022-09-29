@@ -5,8 +5,17 @@ let
 	rust-full = pkgs.rust-bin.selectLatestNightlyWith
 		(toolchain: toolchain.minimal.override
 			{
-				extensions = ["rust-src" "miri" "rustfmt" "rust-docs" "rls" "rust-analysis"];
-				targets = ["x86_64-unknown-linux-gnu" "aarch64-unknown-linux-musl" "x86_64-unknown-linux-musl" "i686-unknown-linux-musl" "x86_64-apple-darwin" "x86_64-pc-windows-gnu" "i686-pc-windows-msvc"];
+				extensions = ["rust-src" "miri" "rustfmt" "rust-docs" "rls" "rust-analysis" "clippy"];
+				targets = [
+						"x86_64-unknown-linux-gnu"
+						"aarch64-unknown-linux-musl"
+						"x86_64-unknown-linux-musl"
+						"i686-unknown-linux-musl"
+						"x86_64-apple-darwin"
+						"x86_64-pc-windows-gnu"
+						"i686-pc-windows-msvc"
+						"wasm32-unknown-unknown"
+				];
 			}
 		);
 in with util-lib; pkgDef {
