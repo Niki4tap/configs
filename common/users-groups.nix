@@ -29,5 +29,11 @@
 			_condition = (config.main.android.adb);
 			users.users.niki4tap.extraGroups = ["adbusers"];
 		}
+		{
+			_condition = true;
+			environment.shellAliases = {
+				redirect = "curl -LsI -o /dev/null -w '%{url_effective}\n'";
+			};
+		}
 	];
 }
