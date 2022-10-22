@@ -3,7 +3,7 @@
 let
 	discord-latest = pkgs.discord.overrideAttrs (old: {
 		withOpenASAR = true;
-		version = "0.0.20";
+		version = "0.0.21";
 		src = pkgs.fetchurl {
 			url = "https://dl.discordapp.net/apps/linux/0.0.20/discord-0.0.21.tar.gz";
 			sha256 = "18rmw979vg8lxxvagji6sim2s5yyfq91lfabsz1wzbniqfr98ci8";
