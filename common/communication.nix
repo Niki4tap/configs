@@ -2,6 +2,7 @@
 
 let
 	discord-latest = pkgs.discord.overrideAttrs (old: {
+		withOpenASAR = true;
 		version = "0.0.20";
 		src = pkgs.fetchurl {
 			url = "https://dl.discordapp.net/apps/linux/0.0.20/discord-0.0.20.tar.gz";
