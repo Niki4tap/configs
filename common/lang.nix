@@ -21,6 +21,7 @@ let
 in with util-lib; pkgDef {
 	def_name = "main.lang";
 	def = with pkgs; {
+		rappel		= [(mkOptOut	"Install rappel (x64asm interpreter)")	[rappel]];
 		llvm_extra	= [(mkOptIn	"Install llvm tools.")			[llvmPackages.bintools-unwrapped]];
 		gcc		= [(mkOptIn	"Install gcc.")				[gcc]];
 		clang		= [(mkOptOut	"Install clang.")			[clang]];
