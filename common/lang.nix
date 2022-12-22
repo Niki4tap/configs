@@ -5,7 +5,7 @@ let
 	rust-full = pkgs.rust-bin.selectLatestNightlyWith
 		(toolchain: toolchain.minimal.override
 			{
-				extensions = ["rust-src" "miri" "rustfmt" "rust-docs" "rls" "rust-analysis" "clippy"];
+				extensions = ["rust-src" "llvm-tools" "rustc" "rustc-dev" "miri" "rustfmt" "rust-docs" "rls" "rust-analysis" "clippy"];
 				targets = [
 						"x86_64-unknown-linux-gnu"
 						"aarch64-unknown-linux-musl"
