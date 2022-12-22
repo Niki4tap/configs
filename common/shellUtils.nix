@@ -4,8 +4,8 @@ with util-lib; pkgDef {
 	def_name = "main.shellUtils";
 	def = with pkgs; {
 		dbg		= [(mkOptOut	"Install debugging programs.")		[gdb]];
-		cool_looking	= [(mkOptOut	"Install cool looking programs.")	[neofetch cpufetch lolcat bat]];
-		basics		= [(mkOptOut	"Install basic shell utilities.")	[pciutils file wget curl]];
+		cool_looking	= [(mkOptOut	"Install cool looking programs.")	[neofetch cpufetch lolcat bat icdiff]];
+		basics		= [(mkOptOut	"Install basic shell utilities.")	[pciutils file wget curl ripgrep]];
 		git		= [(mkOptOut	"Install git.")				[git]];
 		earlyoom	= [(mkOptIn	"Install earlyoom.")			[earlyoom]];
 		xclip		= [(mkOptIn	"Install xclip.")			[xclip]];
