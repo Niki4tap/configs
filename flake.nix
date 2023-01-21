@@ -4,12 +4,16 @@
 	inputs = {
 		nixos-unstable.url = github:NixOS/nixpkgs/nixos-unstable;
 		rust-overlay.url = github:oxalica/rust-overlay;
+		rust-overlay.inputs.nixpkgs.follows = "nixos-unstable";
+		home-manager.url = github:nix-community/home-manager;
+		home-manager.inputs.nixpkgs.follows = "nixos-unstable";
 	};
 
 	outputs = {
 		self,
 		nixos-unstable,
-		rust-overlay
+		rust-overlay,
+		home-manager
 	}@inputs:(
 		let
 			system = "x86_64-linux";
@@ -26,9 +30,9 @@
 				main-desktop = nixos {
 					inherit system;
 
-					# afaik `specialArgs` is deprecated, but I can't use `_module.args` here for some reason?
 					specialArgs.util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
 					specialArgs.rust-overlay = rust-overlay;
+					specialArgs.hm = home-manager;
 					modules = [
 						./common
 						./systems/main-desktop.nix
@@ -39,6 +43,7 @@
 
 					specialArgs.util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
 					specialArgs.rust-overlay = rust-overlay;
+					specialArgs.hm = home-manager;
 					modules = [
 						./common
 						./systems/laptop.nix

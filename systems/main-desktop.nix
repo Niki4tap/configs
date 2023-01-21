@@ -13,7 +13,7 @@
 		editors = {
 			clion = true;
 			pycharm = true;
-			vscode = true;
+			codium = true;
 			kdenlive = true;
 		};
 		fish = {

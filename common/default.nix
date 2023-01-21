@@ -1,7 +1,9 @@
-{nixpkgs, rust-overlay, ...}:
+{nixpkgs, rust-overlay, hm, ...}:
 
 {
 	imports = [
+		(import "${hm}/nixos")
+		./home.nix
 		./users-groups.nix
 		./communication.nix
 		./hardware.nix
