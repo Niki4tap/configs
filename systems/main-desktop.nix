@@ -10,12 +10,7 @@
 			nm = true;
 			hostname = "nixos-desktop";
 		};
-		editors = {
-			clion = true;
-			pycharm = true;
-			codium = true;
-			kdenlive = true;
-		};
+		editors.kdenlive = true;
 		fish = {
 			fish = true;
 			omf = true;
