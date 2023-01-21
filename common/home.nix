@@ -48,20 +48,20 @@
 				enable = true;
 				package = vscode;
 				userSettings = {
-					editor = {
-						codeLensFontFamily	= "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace";
-						fontFamily			= "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace";
-						fontLigatures		= true;
-						inlayHints.enabled	= "off";
-						insertSpaces		= false;
-						detectIndentation	= false;
-					};
-					workbench = {
-						iconTheme		= "vscode-great-icons";
-						colorTheme		= "GitHub Dark";
-						startupEditor	= "none";
-					};
-					security.workspace.trust.untrustedFiles = "open";
+					"editor.codeLensFontFamily" = "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace";
+					"editor.fontFamily"			= "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace";
+					"editor.fontLigatures"		= true;
+					"editor.inlayHints.enabled"	= "off";
+					"editor.insertSpaces"		= false;
+					"editor.detectIndentation"	= false;
+
+					"workbench.iconTheme"		= "vscode-great-icons";
+					"workbench.colorTheme"		= "GitHub Dark";
+					"workbench.startupEditor"	= "none";
+
+					"security.workspace.trust.untrustedFiles" = "open";
+
+					"rust-analyzer.rustc.source" = "discover";
 				};
 				extensions = with vscode-extensions; [
 					matklad.rust-analyzer
