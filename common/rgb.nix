@@ -97,7 +97,7 @@ SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c343", TAG
 SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c232", TAG+="uaccess", TAG+="Logitech_G813_RGB_Mechanical_Gaming_Keyboard"
 SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c33f", TAG+="uaccess", TAG+="Logitech_G815_RGB_Mechanical_Gaming_Keyboard"
 #---------------------------------------------------------------#
-# Logitech Powerplay Mat - 
+# Logitech Powerplay Mat -
 #---------------------------------------------------------------#
 #---------------------------------------------------------------#
 # Logitech G933 - DetectLogitechG933
@@ -162,7 +162,7 @@ SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="145f", ATTRS{idProduct}=="026d", TAG
 #---------------------------------------------------------------#
 SUBSYSTEMS=="usb|hidraw", ATTRS{idVendor}=="145f", ATTRS{idProduct}=="0248", TAG+="uaccess", TAG+="Trust_GXT_180"
 #---------------------------------------------------------------#
-# Quantum Mechanical Keyboard (QMK) - 
+# Quantum Mechanical Keyboard (QMK) -
 #---------------------------------------------------------------#
 #---------------------------------------------------------------#
 # EVision Keyboard - DetectEVisionKeyboards

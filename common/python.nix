@@ -30,7 +30,7 @@ chmod +x $out/bin/python
 	};
 in {
 	options.main.python = with util-lib; {
-		interactive_additions = mkOptOut "Enable interactive additions."; 
+		interactive_additions = mkOptOut "Enable interactive additions.";
 	};
 	config = util-lib.mkMerge [
 		{
