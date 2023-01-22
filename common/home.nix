@@ -71,6 +71,7 @@
 					jnoortheen.nix-ide
 					eamodio.gitlens
 					emmanuelbeziat.vscode-great-icons
+					usernamehw.errorlens
 				];
 			};
 			command-not-found.enable = true;
