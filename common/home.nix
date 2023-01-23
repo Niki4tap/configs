@@ -59,9 +59,12 @@
 					"workbench.colorTheme"		= "GitHub Dark";
 					"workbench.startupEditor"	= "none";
 
-					"security.workspace.trust.untrustedFiles" = "open";
+					"security.workspace.trust.untrustedFiles"	= "open";
+					"security.workspace.trust.banner"			= "never";
 
 					"rust-analyzer.rustc.source" = "discover";
+
+					"telemetry.telemetryLevel" = "off";
 				};
 				extensions = with vscode-extensions; [
 					matklad.rust-analyzer
