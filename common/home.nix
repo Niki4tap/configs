@@ -80,6 +80,8 @@
 			command-not-found.enable = true;
 		};
 
+		xdg.configFile."fish/config.fish".source = ./../prompt/config.fish;
+
 		# --- home manager stuff ---
 
 		home.homeDirectory = "/home/niki4tap";
