@@ -75,12 +75,42 @@
 					eamodio.gitlens
 					emmanuelbeziat.vscode-great-icons
 					usernamehw.errorlens
+					# ANSI Colors
+					(pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+						mktplcRef = {
+							publisher = "iliazeus";
+							name = "vscode-ansi";
+							version = "1.1.2";
+							sha256 = "sQfaykUy3bqL2QFicxR6fyZQtOXtL/BqV0dbAPMh+lA=";
+						};
+						meta = {
+							license = lib.licenses.mit;
+						};
+					})
 				];
 			};
 			command-not-found.enable = true;
 		};
 
-		xdg.configFile."fish/config.fish".source = ./../prompt/config.fish;
+		xdg.configFile."fish/config.fish".source = let
+			prompt = pkgs.stdenv.mkDerivation {
+				name = "fish_prompt";
+
+				src = ./../prompt;
+
+				buildPhase = ''
+					export vscode=${pkgs.vscode}
+					export python=${pkgs.python310}
+					substituteAllInPlace config.fish
+				'';
+
+				installPhase = ''
+					mkdir $out
+					cp colorize.py $out/colorize.py
+					cp config.fish $out/config.fish
+				'';
+			};
+		in "${prompt}/config.fish";
 
 		# --- home manager stuff ---
 

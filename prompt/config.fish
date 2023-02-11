@@ -112,3 +112,11 @@ function down_right_prompt
 	echo ")"
 	set_color normal
 end
+
+function colorize
+	set OUT (echo $argv | sha256sum - | awk '{print $1}')
+	fish -c "$argv" > /tmp/$OUT.ansi 2>&1
+	@python@/bin/python @out@/colorize.py "/tmp/$OUT.ansi"
+	@vscode@/bin/code --disable-workspace-trust -wn "/tmp/$OUT.ansi"
+	rm -f "/tmp/$OUT.ansi"
+end
