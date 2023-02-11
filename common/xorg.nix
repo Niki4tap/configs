@@ -28,7 +28,11 @@ in {
 
 		{
 			_condition = (cfg.dm == "gdm");
-			services.xserver.displayManager.gdm.enable = true;
+			services.xserver.displayManager.gdm = {
+				enable = true;
+				wayland = false;
+				debug = true;
+			};
 		}
 
 		{
@@ -38,7 +42,29 @@ in {
 
 		{
 			_condition = (cfg.de == "gnome");
-			services.xserver.desktopManager.gnome.enable = true;
+			services.xserver.desktopManager.gnome = {
+				enable = true;
+				debug = true;
+			};
+			environment.systemPackages = [ pkgs.konsole ];
+			environment.gnome.excludePackages = (with pkgs; [
+				gnome-photos
+				gnome-tour
+			]) ++ (with pkgs.gnome; [
+				gnome-terminal
+				cheese
+				gnome-music
+				gedit
+				epiphany
+				geary
+				evince
+				gnome-characters
+				totem
+				tali
+				iagno
+				hitori
+				atomix
+			]);
 		}
 
 		{

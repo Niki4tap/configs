@@ -50,7 +50,7 @@
 			tmux = true;
 			screen = false;
 		};
-		xorg.dm = "sddm";
+		xorg.dm = "gdm";
 		xorg.de = "gnome";
 		rgb.openrgb = true;
 	};
