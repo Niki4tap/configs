@@ -3,7 +3,7 @@
 # !!!
 # !!!
 
-{pkgs, ...}: {
+{pkgs, lib, ...}: {
 	home-manager.users.niki4tap = {
 		# --- email ---
 
@@ -62,7 +62,7 @@
 					"security.workspace.trust.untrustedFiles"	= "open";
 					"security.workspace.trust.banner"			= "never";
 
-					"rust-analyzer.rustc.source" = "discover";
+					"rust-analyzer.rustc.source" = "/home/niki4tap/clones/rough-rust/Cargo.toml";
 
 					"telemetry.telemetryLevel" = "off";
 				};

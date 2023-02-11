@@ -1,4 +1,4 @@
-{config, pkgs, util-lib, ...}:
+{config, pkgs, util-lib, rough-rust, ...}:
 
 {
 	config = with util-lib; mkMerge [
@@ -16,6 +16,19 @@
 					gid = 1000;
 				};
 			};
+			system.userActivationScripts.clone-rough-rust.text = ''
+				if [[ $EUID != 1000 ]] then
+					exit
+				fi
+				if [[ -d "/home/niki4tap/clones/rough-rust" ]] then
+					chmod -R 777 /home/niki4tap/clones/rough-rust
+					rm -rf /home/niki4tap/clones/rough-rust
+				fi
+				mkdir -p /home/niki4tap/clones/rough-rust
+				cp -r ${rough-rust}/* /home/niki4tap/clones/rough-rust/
+				chmod 755 /home/niki4tap/clones/rough-rust
+				chmod -R 555 /home/niki4tap/clones/rough-rust/*
+			'';
 		}
 		{
 			_condition = (!config.main.hardware.homePartition);

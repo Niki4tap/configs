@@ -7,13 +7,20 @@
 		rust-overlay.inputs.nixpkgs.follows = "nixos-unstable";
 		home-manager.url = github:nix-community/home-manager;
 		home-manager.inputs.nixpkgs.follows = "nixos-unstable";
+		rough-rust = {
+			flake = false;
+			url = "https://github.com/rust-lang/rust.git";
+			type = "git";
+			submodules = true;
+		};
 	};
 
 	outputs = {
 		self,
 		nixos-unstable,
 		rust-overlay,
-		home-manager
+		home-manager,
+		rough-rust
 	}@inputs:(
 		let
 			system = "x86_64-linux";
@@ -30,9 +37,12 @@
 				main-desktop = nixos {
 					inherit system;
 
-					specialArgs.util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
-					specialArgs.rust-overlay = rust-overlay;
-					specialArgs.hm = home-manager;
+					specialArgs = {
+						util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
+						rust-overlay = rust-overlay;
+						hm = home-manager;
+						inherit rough-rust;
+					};
 					modules = [
 						./common
 						./systems/main-desktop.nix
@@ -41,9 +51,12 @@
 				nixos-laptop = nixos {
 					inherit system;
 
-					specialArgs.util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
-					specialArgs.rust-overlay = rust-overlay;
-					specialArgs.hm = home-manager;
+					specialArgs = {
+						util-lib = import ./util {pkgs = pkgs-unstable; lib = lib-unstable;};
+						rust-overlay = rust-overlay;
+						hm = home-manager;
+						inherit rough-rust;
+					};
 					modules = [
 						./common
 						./systems/laptop.nix

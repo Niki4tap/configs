@@ -56,7 +56,26 @@
       "inputs": {
         "home-manager": "home-manager",
         "nixos-unstable": "nixos-unstable",
+        "rough-rust": "rough-rust",
         "rust-overlay": "rust-overlay"
+      }
+    },
+    "rough-rust": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1674911579,
+        "narHash": "sha256-BNLmDEgCK1UVgHJ+a2+haRSi6DnnyiY7Y73u43BEMXc=",
+        "ref": "refs/heads/master",
+        "rev": "bca8b4dc32ec20f9a4e0ca55f54e5b2a531936fc",
+        "revCount": 216075,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/rust-lang/rust.git"
+      },
+      "original": {
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/rust-lang/rust.git"
       }
     },
     "rust-overlay": {
