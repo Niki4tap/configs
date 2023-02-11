@@ -48,12 +48,16 @@
 				enable = true;
 				package = vscode;
 				userSettings = {
-					"editor.codeLensFontFamily" = "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace";
-					"editor.fontFamily"			= "'JetBrains Mono', 'Droid Sans Mono', 'monospace', monospace";
+					"editor.codeLensFontFamily" = "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace'";
+					"editor.fontFamily"			= "'JetBrainsMono Nerd Font', 'Droid Sans Mono', 'monospace'";
 					"editor.fontLigatures"		= true;
 					"editor.inlayHints.enabled"	= "off";
 					"editor.insertSpaces"		= false;
 					"editor.detectIndentation"	= false;
+					"editor.cursorBlinking"		= "phase";
+					"editor.unicodeHighlight.allowedCharacters" = {
+						"\u001b" = true;
+					};
 
 					"workbench.iconTheme"		= "vscode-great-icons";
 					"workbench.colorTheme"		= "GitHub Dark";

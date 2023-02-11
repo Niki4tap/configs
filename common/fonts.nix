@@ -2,9 +2,8 @@
 
 {
 	fonts.fonts = with pkgs; [
-		jetbrains-mono
+		nerdfonts
 		noto-fonts
 		noto-fonts-emoji
-		cascadia-code
 	];
 }
