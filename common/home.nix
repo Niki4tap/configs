@@ -105,6 +105,7 @@
 				buildPhase = ''
 					export vscode=${pkgs.vscode}
 					export python=${pkgs.python310}
+					export any_nix_shell=${pkgs.any-nix-shell}
 					substituteAllInPlace config.fish
 				'';
 
@@ -112,6 +113,7 @@
 					mkdir $out
 					cp colorize.py $out/colorize.py
 					cp config.fish $out/config.fish
+					cp whitelist $out/whitelist
 				'';
 			};
 		in "${prompt}/config.fish";
