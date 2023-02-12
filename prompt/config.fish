@@ -7,16 +7,51 @@ function fish_right_prompt
 end
 
 function up_prompt
+	set -g up_prompt_last_color bryellow
 	printf \
-		"%s%s       %s %s" \
-		(set_color -r bryellow) \
-		(set_color -b bryellow bryellow) \
-		(set_color -b normal bryellow) \
+		"%s%s %s %s %s %s%s " \
+		(set_color -b bryellow black) \
+		(set_color black) \
+		(prompt_user) \
+		(prompt_host) \
+		(prompt_nix_sh_pkgs) \
+		(set_color -b normal $up_prompt_last_color) \
 		(set_color normal)
 end
 
+function prompt_user
+	set -g up_prompt_last_color bryellow
+	printf "%s%s  %s " \
+		(set_color bryellow) \
+		(set_color -b bryellow black) \
+		(whoami)
+end
+
+function prompt_host
+	set -g up_prompt_last_color red
+	printf "%s%s  %s " \
+		(set_color red) \
+		(set_color -b red black) \
+		(hostname)
+end
+
+function prompt_nix_sh_pkgs
+	if [ -n "$ANY_NIX_SHELL_PKGS" ]
+		set -g up_prompt_last_color cyan
+		printf "%s%s %s " \
+			(set_color cyan) \
+			(set_color -b cyan black) \
+			$ANY_NIX_SHELL_PKGS
+	else
+		echo -ne " "
+	end
+end
+
 function up_right_prompt
-	echo "󰣙"
+	printf "%s%s     %s" \
+		(set_color bryellow) \
+		(set_color -b bryellow black) \
+		(set_color -b normal normal)
 end
 
 function down_prompt
