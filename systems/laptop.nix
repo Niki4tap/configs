@@ -1,7 +1,5 @@
 {config, lib, pkgs, ...}:
 
-# This system is deprecated for now, since I've lost my laptop charger :(
-
 {
 	main = {
 		communication = {
