@@ -16,9 +16,9 @@ in {
 			_condition = cfg.flakes;
 			nix = {
 				package = pkgs.nixFlakes;
-				extraOptions = ''
-					experimental-features = nix-command flakes
-				'';
+				settings = {
+					experimental-features = ["nix-command" "flakes" "impure-derivations"];
+				};
 			};
 		}
 		{
