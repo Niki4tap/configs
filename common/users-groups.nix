@@ -26,8 +26,10 @@
 				fi
 				mkdir -p /home/niki4tap/clones/rough-rust
 				cp -r ${rough-rust}/* /home/niki4tap/clones/rough-rust/
+				cp -r ${rough-rust}/.* /home/niki4tap/clones/rough-rust/
 				chmod 755 /home/niki4tap/clones/rough-rust
 				chmod -R 555 /home/niki4tap/clones/rough-rust/*
+				chmod -R 555 /home/niki4tap/clones/rough-rust/.*
 			'';
 		}
 		{
