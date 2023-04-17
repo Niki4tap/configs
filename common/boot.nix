@@ -5,7 +5,7 @@ util-lib.mkMerge [
 		_condition = true;
 		boot = {
 			cleanTmpDir = true;
-			crashDump.enable = true;
+#			crashDump.enable = true; # If you enable this, you die (this patches the kernel and results in 100% cache miss)
 			supportedFilesystems = ["fat"];
 			initrd = {
 				enable = true;
