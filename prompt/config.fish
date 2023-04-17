@@ -268,7 +268,7 @@ end
 function rebuild
 	git_configs add $HOME/code/nix/configs/
 	git_configs status
-	nixos-rebuild switch -j16 --cores 8 --use-remote-sudo --flake ~/code/nix/configs#main-desktop
+	nixos-rebuild switch -j16 --cores 8 --use-remote-sudo --flake "/home/niki4tap/code/nix/configs#$(hostname)"
 	source $HOME/.config/fish/config.fish
 end
 
