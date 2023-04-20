@@ -69,6 +69,13 @@
 					"rust-analyzer.rustc.source" = "/home/niki4tap/clones/rough-rust/Cargo.toml";
 
 					"telemetry.telemetryLevel" = "off";
+
+					"errorLens.enabledDiagnosticLevels" = [
+						"error"
+						"warning"
+						"info"
+						"hint"
+					];
 				};
 				extensions = with vscode-extensions; [
 					matklad.rust-analyzer
@@ -76,9 +83,21 @@
 					github.github-vscode-theme
 					editorconfig.editorconfig
 					jnoortheen.nix-ide
-					eamodio.gitlens
+					# Pin gitlens since it dies every update
+					(pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+						mktplcRef = {
+							publisher = "eamodio";
+							name = "gitlens";
+							version = "13.3.0";
+							sha256 = "QQ2pFbglSuXZjubwbVgn+N47s66lFs9YgzGfWPejVw8=";
+						};
+						meta = {
+							license = lib.licenses.mit;
+						};
+					})
 					emmanuelbeziat.vscode-great-icons
 					usernamehw.errorlens
+					ritwickdey.liveserver
 					# ANSI Colors
 					(pkgs.vscode-utils.buildVscodeMarketplaceExtension {
 						mktplcRef = {
