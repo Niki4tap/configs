@@ -130,9 +130,7 @@
 
 				installPhase = ''
 					mkdir $out
-					cp colorize.py $out/colorize.py
-					cp config.fish $out/config.fish
-					cp whitelist $out/whitelist
+					cp * $out/
 				'';
 			};
 		in "${prompt}/config.fish";

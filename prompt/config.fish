@@ -145,7 +145,7 @@ function prompt_dir
 end
 
 function prompt_nix_sh_pkgs
-	if [ -n "$ANY_NIX_SHELL_PKGS" ]
+	if set -q ANY_NIX_SHELL_PKGS
 		set -gx up_prompt_last_color cyan
 		printf "%s%s %s " \
 			(set_color cyan) \
@@ -286,4 +286,9 @@ end
 
 function nix-shell --wraps nix-shell
 	@any_nix_shell@/bin/.any-nix-shell-wrapper fish $argv
+end
+
+function pretend --wraps fish
+	clear
+	fish --private --interactive --no-config --init-command "source @out@/pretend.fish" $argv
 end
